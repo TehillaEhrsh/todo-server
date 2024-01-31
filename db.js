@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const MONGO_URL = process.env.MONGO_URL 
+const MONGO_URL ='mongodb+srv://tehilla183:123456Aden@cluster0.0jwq3c9.mongodb.net/?retryWrites=true&w=majority'
 function connect(){
 
 try{
