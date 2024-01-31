@@ -13,9 +13,11 @@ async function readOne(filter={}){
     let user =  await todoModel.findOne(filter)
     return user
 }
-async function updateOne(filter={} , Done){
+async function updateOne(filter ={} , up){
+console.log("controller",up);
+console.log("filter",filter);
 
-    let res= await todoModel.updateOne(id,{done: Done})
+    let res= await todoModel.updateOne(filter,{done: up})
     console.log(res);
     return res
 }

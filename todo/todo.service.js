@@ -15,7 +15,9 @@ return await todoController.create(todo)
 
 async function updateOne(id,data){
    let up= data.done
-return await todoController.updateOne({id,up})
+   if(!up == Boolean) throw 'done is not boolean'
+   
+return await todoController.updateOne({_id: id}, up)
 }
 
 async function readOne({id}){
