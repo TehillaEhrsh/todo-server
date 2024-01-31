@@ -3,6 +3,7 @@ const moment = require('moment');
 
 
 async function createTodo(data){
+    console.log("service", data);
  if(!data.title) throw "not found taxt"
 console.log(data);
 let todo=  {  

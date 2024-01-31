@@ -23,7 +23,7 @@ console.log("filter",filter);
 }
 
 async function del(id){
-return await updateById(id,{isActive: false})}
+return await updateById({_id:id},{isActive: false})}
 
 async function updateById(id,data){
     return await todoModel.updateOne({_id: id}, data)
