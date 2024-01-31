@@ -18,12 +18,10 @@ console.log("controller",up);
 console.log("filter",filter);
 
     let res= await todoModel.updateOne(filter,{done: up})
-    console.log(res);
     return res
 }
 
 async function del(id){
-    console.log("controller", id);
 return await todoModel.deleteOne({_id : id})}
 
 async function updateById(id,data){

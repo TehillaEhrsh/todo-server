@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
+    console.log("router",req.body);
     res.send( await todoService.createTodo(req.body));
   } catch (err) {
     res.status(402).send(err);
@@ -41,8 +42,6 @@ router.delete("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    console.log("id",id);
-    console.log("body",req.body);
     res.send(await todoService.updateOne(id, req.body));
   } catch (err) {
     res.status(402).send(err);
