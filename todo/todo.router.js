@@ -27,14 +27,17 @@ router.delete("/all", async (req, res) => {
     res.status(402).send(err);
   }
 });
+
 router.delete("/:id", async (req, res) => {
   try {
     const id = req.params.id;
+    console.log("del_id",id);
     res.send(await todoService.delOne(id));
   } catch (err) {
     res.status(402).send(err);
   }
 });
+
 router.put("/:id", async (req, res) => {
   try {
     const id = req.params.id;

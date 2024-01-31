@@ -21,14 +21,15 @@ async function updateOne(filter={} , Done){
 }
 
 async function del(id){
-return await updateById(id,{isActive: false})}
+    console.log("controller", id);
+return await todoModel.deleteOne({_id : id})}
 
 async function updateById(id,data){
     return await todoModel.updateOne({_id: id}, data)
 }
 
 async function deleteAll(filter={}){
-    return await todoModel.updateMany(filter,{isActive: false})
+    return await todoModel.deleteMany(filter,{isActive: false})
 }
 async function updateMany(filter ={},data){
     return await todoModel.updateMany(filter, {done: data})
