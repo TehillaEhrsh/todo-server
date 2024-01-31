@@ -29,19 +29,19 @@ return await todoController.readOne({_id: id})
 async function read(){
 
    let todoList=await todoController.read()
-const newL=  todoList.forEach((n)=>{
+const nowL= todoList.map((n)=>{
 const endDate = moment(n.date);
 const currentDate = moment();
 const duration = moment.duration(endDate.diff(currentDate));
 const remainingHours = duration.as('hours');
 
-n={...n, hours :  remainingHours}
-
-
+n={...n._doc, hours :  remainingHours}
+console.log("n::" ,n)
+return n
 })
 
 
-return  todoList
+return  nowL
 }
 
 async function delAll(filter={}){

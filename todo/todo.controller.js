@@ -18,19 +18,18 @@ console.log("controller",up);
 console.log("filter",filter);
 
     let res= await todoModel.updateOne(filter,{done: up})
-    console.log(res);
     return res
 }
 
 async function del(id){
-return await updateById({_id:id},{isActive: false})}
+return await todoModel.deleteOne({_id : id})}
 
 async function updateById(id,data){
     return await todoModel.updateOne({_id: id}, data)
 }
 
 async function deleteAll(filter={}){
-    return await todoModel.updateMany(filter,{isActive: false})
+    return await todoModel.deleteMany(filter,{isActive: false})
 }
 async function updateMany(filter ={},data){
     return await todoModel.updateMany(filter, {done: data})
