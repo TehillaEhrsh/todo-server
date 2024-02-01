@@ -10,7 +10,7 @@ const todoSchema= new mongoose.Schema({
    
     date: {
         type : Date ,
-default: Date.now
+        require: true,
     },
    done:{
     type : Boolean,

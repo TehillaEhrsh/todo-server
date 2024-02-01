@@ -1,7 +1,7 @@
 const todoModel = require('./todo.model')
 
 async function create(data){
-  return await  todoModel.create(data)
+  return await todoModel.create(data)
 }
 
 async function read(filter={}){

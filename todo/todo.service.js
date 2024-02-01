@@ -9,7 +9,7 @@ console.log(data);
 let todo=  {  
     title : data.title, 
     done : false,
-    date : data.Data
+    date : data.date
 }
 return await todoController.create(todo)
 }
@@ -39,7 +39,6 @@ n={...n._doc, hours :  remainingHours}
 console.log("n::" ,n)
 return n
 })
-
 
 return  nowL
 }
